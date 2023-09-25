@@ -24,7 +24,7 @@ function NavBar() {
           <Navbar.Collapse id="navBar">
             <Nav className="col d-flex justify-content-end">
               <NavLink href="/#" active>Home</NavLink>
-              <NavLink href="/#diseases">Diseases</NavLink>
+              <NavLink href="/#/diseases">Diseases</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
