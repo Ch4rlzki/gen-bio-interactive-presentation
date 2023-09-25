@@ -17,8 +17,8 @@ function NavBar() {
           <Navbar.Toggle aria-controls="navBar" />
           <Navbar.Collapse id="navBar">
             <Nav className="col d-flex justify-content-end">
-              <NavLink href="/">Home</NavLink>
-              <NavLink href="/diseases" active>Diseases</NavLink>
+              <NavLink href="/gen-bio-interactive-presentation">Home</NavLink>
+              <NavLink href="/gen-bio-interactive-presentation/diseases" active>Diseases</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

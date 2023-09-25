@@ -6,11 +6,11 @@ import Diseases from "./pages/Diseases.js";
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route index element={<Home/>}/>
-          <Route path="/diseases" element={<Diseases/>}/>
           <Route path="*" element={<Home/>}/>
+          <Route path="/diseases" element={<Diseases/>}/>
         </Routes>
       </BrowserRouter>
     </div>
