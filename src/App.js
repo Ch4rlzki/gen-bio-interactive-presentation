@@ -1,18 +1,16 @@
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import Home from "./pages/Home.js";
 import Diseases from "./pages/Diseases.js";
 
 function App() {
   return (
-    <div>
-      <HashRouter basename="/">
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/diseases" element={<Diseases />} />
-        </Routes>
-      </HashRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home/>}></Route>
+        <Route exact path="/diseases" element={<Diseases/>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
