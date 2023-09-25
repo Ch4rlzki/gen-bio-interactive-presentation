@@ -6,10 +6,9 @@ import Diseases from "./pages/Diseases.js";
 function App() {
   return (
     <div>
-      <HashRouter>
+      <HashRouter basename="/">
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="*" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/diseases" element={<Diseases />} />
         </Routes>
       </HashRouter>
