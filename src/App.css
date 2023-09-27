@@ -1,0 +1,24 @@
+[startup-animation="fade-in"] {
+    animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+[scroll-animation="fade-up"] {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+[scroll-animation="fade-up"].active {
+    transform: translateY(0);
+    opacity: 100%;
+    transition: all 0.5s ease-in-out;
+}

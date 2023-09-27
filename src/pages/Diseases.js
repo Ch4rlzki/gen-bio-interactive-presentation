@@ -1,6 +1,6 @@
 import "../App.css";
 import { Container, Nav, Navbar, NavLink, Row, Col, Image, Button, Modal } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import endoplasmicDiseases from "../imgs/endoplasmic-diseases.png";
 import golgiApparatusDiseases from "../imgs/golgi-apparatus-diseases.png";
@@ -76,7 +76,7 @@ function LeftOrganelle(name, desc1, desc2, desc3, img, examples) {
           <p>{examples}</p>
         </Modal.Body>
       </Modal>
-      <Container className="py-3 py-md-5">
+      <Container className="py-3 py-md-5" scroll-animation='fade-up'>
         <Row className="gap-3 gap-md-5">
           <Col className="d-flex justify-content-center align-items-center" md>
             <Image src={img} alt={img} fluid rounded />
@@ -117,7 +117,7 @@ function RightOrganelle(name, desc1, desc2, desc3, img, examples) {
           <p>{examples}</p>
         </Modal.Body>
       </Modal>
-      <Container className="py-3 py-md-5">
+      <Container className="py-3 py-md-5" scroll-animation='fade-up'>
         <Row className="gap-3 gap-md-5">
           <Col className="d-flex justify-content-center align-items-center" md>
             <div>
@@ -138,8 +138,24 @@ function RightOrganelle(name, desc1, desc2, desc3, img, examples) {
 }
 
 function Diseases() {
+  useEffect(() => {
+    const elements = document.querySelectorAll("[scroll-animation='fade-up']");
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+
+      elements.forEach((e) => {
+        if (scrollY > e.offsetTop - window.innerHeight / 2) {
+          e.classList.add("active");
+        } else {
+          e.classList.remove("active");
+        }
+      });
+    });
+  });
+
   return (
-    <div>
+    <div startup-animation='fade-in'>
       {NavBar()}
 
       <main className="mt-5">
